@@ -17,3 +17,4 @@ jobs:
           email: ${{ secrets.CC_EMAIL }}
           passwd: ${{ secrets.CC_PASSWD }}
           secret: ${{ secrets.CC_SECRET }}
+          host: cordcloud.one,cordcloud.biz,c-cloud.xyz,cordcloud.us
