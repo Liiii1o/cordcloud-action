@@ -1,0 +1,19 @@
+name: CordCloud
+
+on:
+  schedule:
+    # 每天北京时间凌晨 0:30 自动运行
+    # (UTC 时间 16:30 + 8小时 = 北京时间 00:30)
+    - cron: "30 16 * * *"
+  workflow_dispatch: # 👈 这一行非常重要！能让你随时手动点按钮测试
+
+jobs:
+  checkin:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 运行 CordCloud 签到
+        uses: yanglbme/cordcloud-action@main
+        with:
+          email: ${{ secrets.CC_EMAIL }}
+          passwd: ${{ secrets.CC_PASSWD }}
+          secret: ${{ secrets.CC_SECRET }}
